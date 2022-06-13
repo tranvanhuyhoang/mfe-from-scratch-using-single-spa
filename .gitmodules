@@ -1,0 +1,3 @@
+[submodule "mfe-product-list-app"]
+	path = mfe-product-list-app
+	url = https://github.com/tranvanhuyhoang/mfe-product-list-app.git
