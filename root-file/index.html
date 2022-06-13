@@ -11,6 +11,7 @@
       {
         "imports": {
           "product-list": "http://localhost:9001/js/app.js",
+          "product-detail": "http://localhost:9002/js/app.js",
           "single-spa": "https://cdnjs.cloudflare.com/ajax/libs/single-spa/5.9.4/system/single-spa.min.js",
           "vue": "https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js",
           "vue-router": "https://cdn.jsdelivr.net/npm/vue-router@3.0.7/dist/vue-router.min.js"
@@ -45,11 +46,11 @@
                         location => true
                     );
 
-                    // singleSpa.registerApplication(
-                    //     'product-list',
-                    //     () => System.import('product-list'),
-                    //     location => location.pathname.startsWith('/product-list')
-                    // )
+                    singleSpa.registerApplication(
+                        'product-detail',
+                        () => System.import('product-detail'),
+                        location => location.pathname.startsWith('/detail')
+                    )
 
                     // singleSpa.registerApplication(
                     //     'app1',
