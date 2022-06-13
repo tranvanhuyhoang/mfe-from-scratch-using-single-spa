@@ -1,0 +1,13 @@
+{
+  "name": "root-file",
+  "version": "1.0.0",
+  "description": "root file for implement micro app",
+  "scripts": {
+    "serve": "serve -p 9000"
+  },
+  "author": "hoangtvh",
+  "license": "ISC",
+  "devDependencies": {
+    "serve": "^13.0.2"
+  }
+}
