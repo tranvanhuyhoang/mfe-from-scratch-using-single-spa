@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "root file for implement micro app",
   "scripts": {
-    "serve": "serve -p 9000"
+    "serve": "serve -s -l 9000"
   },
   "author": "hoangtvh",
   "license": "ISC",
