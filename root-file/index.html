@@ -7,6 +7,7 @@
     <title>Microfrontends Single Spa From Scratch</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="importmap-type" content="systemjs-importmap">
+    <link rel="stylesheet" href="./globalStyle.css">
     <script type="systemjs-importmap">
       {
         "imports": {
@@ -32,37 +33,34 @@
 </head>
 
 <body>
-        <script>
-            (function () {
-                Promise.all([System.import('single-spa'), System.import('vue'), System.import('vue-router')]).then(function (modules) {
-                    var singleSpa = modules[0];
-                    var Vue = modules[1];
-                    var VueRouter = modules[2];
+    <div id="main">
+        <div id="product-relate"></div>
+        <div id="product-detail"></div>
+    </div>
+    <script>
+        (function () {
+            Promise.all([System.import('single-spa'), System.import('vue'), System.import('vue-router')]).then(function (modules) {
+                var singleSpa = modules[0];
+                var Vue = modules[1];
+                var VueRouter = modules[2];
 
-                    Vue.use(VueRouter)
+                Vue.use(VueRouter)
 
-                    singleSpa.registerApplication(
-                        'navbar',
-                        () => System.import('navbar'),
-                        location => true
-                    )
+                singleSpa.registerApplication(
+                    'product-detail',
+                    () => System.import('product-detail'),
+                    location => location.pathname.startsWith('/')
+                )
 
-                    singleSpa.registerApplication(
-                        'product-detail',
-                        () => System.import('product-detail'),
-                        location => location.pathname.startsWith('/product-detail')
-                        
-                    )
-
-                    singleSpa.registerApplication(
-                        'product-list',
-                        () => System.import('product-list'),
-                        location => location.pathname.startsWith('/product-list')
-                    )
-                    singleSpa.start();
-                })
-            })()
-        </script>
+                singleSpa.registerApplication(
+                    'product-list',
+                    () => System.import('product-list'),
+                    location => location.pathname.startsWith('/')
+                )
+                singleSpa.start();
+            })
+        })()
+    </script>
     <import-map-overrides-full show-when-local-storage="overrides-ui"></import-map-overrides-full>
 </body>
 
