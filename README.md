@@ -38,7 +38,7 @@ yarn & yarn serve
 
 ---
 
-####How I approach this project?
+###How I approach this project?
 
 1. In the html file, we need remember the concept of root-file, have 2 work very important:
    1.1 Import your micro-app (using import-map or webpack..., in this case I using import-map)
@@ -81,5 +81,7 @@ yarn & yarn serve
 
 _Preferences:_
 [Research Architectural Overview] https://single-spa.js.org/docs/getting-started-overview/
+<br>
 [Research concept of Root file config] https://single-spa.js.org/docs/configuration
+<br>
 [Research concept of mirco applications] https://single-spa.js.org/docs/building-applications
