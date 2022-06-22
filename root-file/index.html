@@ -12,7 +12,7 @@
       {
         "imports": {
             "navbar": "http://localhost:9003/js/app.js",
-            "product-list": "http://localhost:9001/js/app.js",
+            "product-relate": "http://localhost:9001/js/app.js",
             "product-detail": "http://localhost:9002/js/app.js",
             "single-spa": "https://cdnjs.cloudflare.com/ajax/libs/single-spa/5.9.4/system/single-spa.min.js",
             "vue": "https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js",
@@ -21,10 +21,9 @@
         }
       }
     </script>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/single-spa/5.9.4/system/single-spa.min.js"
-        as="script" crossorigin="anonymous" />
-    <link rel="preload" href="https://unpkg.com/vue@3/dist/vue.esm-browser.js" as="script"
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/single-spa/4.3.7/system/single-spa.min.js" as="script"
         crossorigin="anonymous" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js" as="script" crossorigin="anonymous" />
     <script src="https://unpkg.com/import-map-overrides@1.7.2/dist/import-map-overrides.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.1.1/system.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.1.1/extras/amd.min.js"></script>
@@ -49,42 +48,51 @@
                 var singleSpa = modules[0];
                 var Vue = modules[1];
                 var VueRouter = modules[2];
-                var VueX = modules[4];
+                var VueX = modules[3];
 
-                Vue.use(VueRouter, VueX);
+                Vue.use(VueRouter);
+                Vue.use(VueX);
 
                 const store = new VueX.Store({
                     state: {
-                        count: 0
+                        count: 0,
+                        currentSku: 't_porsche'
+                    },
+                    mutations: {
+                        setCurrentSku(state, payload) {
+                            state.currentSku = payload;
+                        },
+                        setCount(state){
+                            state.count++;
+                        }
                     },
                     actions: {
-                        increment(context, payload) {
-                            context.commit('increment', payload)
+                        setSku(context, payload) {
+                            context.commit('setCurrentSku', payload);
+                        },
+                        setCount(context){
+                            context.commit('setCount');
                         }
                     }
                 })
 
-                singleSpa.registerApplication(
-                    'product-detail',
-                    () => System.import('product-detail'),
-                    location => location.pathname.startsWith('/'),
-                    (appName, location) => {
-                        return {
-                            authToken: 'HOANGxc67f6as87f7s9d'
-                        }
-                    }   
-                )
+                singleSpa.registerApplication({
+                    name: 'product-detail',
+                    app: () => System.import('product-detail'),
+                    activeWhen: '/',
+                    customProps: {
+                        store
+                    },
+                })
 
-                singleSpa.registerApplication(
-                    'product-list',
-                    () => System.import('product-list'),
-                    location => location.pathname.startsWith('/'),
-                    (appName, location) => {
-                        return {
-                            authToken: 'HOANGxc67f6as87f7s9d'
-                        }
-                    }   
-                )
+                singleSpa.registerApplication({
+                    name: 'product-relate',
+                    app: () => System.import('product-relate'),
+                    activeWhen: '/',
+                    customProps: {
+                        store,
+                    } 
+                })
                 singleSpa.start();
             })
         })()

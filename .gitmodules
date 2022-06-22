@@ -4,3 +4,9 @@
 [submodule "mfe-product-detail-app"]
 	path = mfe-product-detail-app
 	url = git@github.com:tranvanhuyhoang/mfe-product-detail-app.git
+[submodule "mfe-product-detail"]
+	path = mfe-product-detail
+	url = https://github.com/tranvanhuyhoang/mfe-product-detail.git
+[submodule "mfe-product-relate"]
+	path = mfe-product-relate
+	url = https://github.com/tranvanhuyhoang/mfe-product-relate.git
