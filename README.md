@@ -20,3 +20,5 @@ yarn & yarn serve
 cd mfe-product-detail
 yarn & yarn serve
 ```
+
+---
