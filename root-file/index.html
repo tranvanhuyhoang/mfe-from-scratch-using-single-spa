@@ -42,38 +42,25 @@
                 System.import('single-spa'), 
                 System.import('vue'), 
                 System.import('vue-router'),
-                System.import('vuex')
             ]).then(function (modules) {
                 var singleSpa = modules[0];
                 var Vue = modules[1];
                 var VueRouter = modules[2];
-                var VueX = modules[3];
 
                 Vue.use(VueRouter);
-                Vue.use(VueX);
-
-                const store = new VueX.Store({
-                    state: {
-                        count: 0,
-                        currentSku: 't_porsche'
-                    },
-                    mutations: {
-                        setCurrentSku(state, payload) {
-                            state.currentSku = payload;
-                        },
-                        setCount(state){
-                            state.count++;
-                        }
-                    },
-                    actions: {
-                        setSku(context, payload) {
-                            context.commit('setCurrentSku', payload);
-                        },
-                        setCount(context){
-                            context.commit('setCount');
-                        }
-                    }
-                })
+								
+								const store = {
+									state: {
+										count: 0,
+										currentSku: 't_porsche'
+									},
+									setCount() {
+										this.state.count++;
+									},
+									setSku(sku) {
+										this.state.currentSku = sku;
+									}
+								}
 
                 singleSpa.registerApplication({
                     name: 'product-detail',
