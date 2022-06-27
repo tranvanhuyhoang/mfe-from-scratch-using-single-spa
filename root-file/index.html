@@ -8,17 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="importmap-type" content="systemjs-importmap">
     <link rel="stylesheet" href="./globalStyle.css">
+		<script type="systemjs-importmap"
+		src="https://storage.googleapis.com/polyglot.microfrontends.app/importmap.json"></script>
     <script type="systemjs-importmap">
-      {
-        "imports": {
-            "product-relate": "http://localhost:9001/js/app.js",
-            "product-detail": "http://localhost:9002/js/app.js",
-            "single-spa": "https://cdnjs.cloudflare.com/ajax/libs/single-spa/5.9.4/system/single-spa.min.js",
-            "vue": "https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js",
-            "vuex": "https://cdn.jsdelivr.net/npm/vuex/dist/vuex.min.js",
-            "vue-router": "https://cdn.jsdelivr.net/npm/vue-router@3.0.7/dist/vue-router.min.js"
-        }
-      }
+			{
+				"imports": {
+						"product-relate": "https://mfe-product-relate.surge.sh/js/app.js",
+						"product-detail": "https://mfe-product-detail.surge.sh/js/app.js",
+						"single-spa": "https://cdnjs.cloudflare.com/ajax/libs/single-spa/5.9.4/system/single-spa.min.js",
+						"vue": "https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js",
+						"vuex": "https://cdn.jsdelivr.net/npm/vuex/dist/vuex.min.js",
+						"vue-router": "https://cdn.jsdelivr.net/npm/vue-router@3.0.7/dist/vue-router.min.js"
+				}	
+			}
     </script>
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/single-spa/4.3.7/system/single-spa.min.js" as="script"
         crossorigin="anonymous" />
