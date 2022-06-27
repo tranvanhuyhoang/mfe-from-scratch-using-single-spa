@@ -1,0 +1,18 @@
+{
+  "name": "mfe-from-scratch-using-single-spa",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "mfe-product-detail",
+      "mfe-product-relate",
+      "root-file"
+    ]
+  },
+  "scripts": {
+    "start": "lerna run --parallel serve",
+    "build": "lerna run build"
+  },
+  "devDependencies": {
+    "lerna": "^5.1.6"
+  }
+}
