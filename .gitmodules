@@ -10,3 +10,6 @@
 [submodule "mfe-product-relate"]
 	path = mfe-product-relate
 	url = https://github.com/tranvanhuyhoang/mfe-product-relate.git
+[submodule "mfe-product-cart"]
+	path = mfe-product-cart
+	url = git@github.com:tranvanhuyhoang/mfe-product-cart.git
