@@ -3,13 +3,14 @@
   "private": true,
   "workspaces": {
     "packages": [
+      "mfe-product-cart",
       "mfe-product-detail",
       "mfe-product-relate",
       "root-file"
     ]
   },
   "scripts": {
-    "start": "lerna run --parallel serve",
+    "serve": "lerna run --parallel serve",
     "build": "lerna run build"
   },
   "devDependencies": {

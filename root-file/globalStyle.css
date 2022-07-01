@@ -5,10 +5,10 @@
     grid-column-gap: 20px;
     grid-gap: 5px;
     grid-row-gap: 10px;
-    margin: 130px auto 50px auto;
+    margin: 80px auto 50px auto;
     grid-template-areas:
     'detail relate';
-    grid-template-columns: 10fr 1fr;
+    grid-template-columns: 11fr 3fr;
 }
 
 #product-relate{
@@ -17,8 +17,13 @@
 
 #product-detail {
     grid-area: detail;
-    border-right: 2px dashed #4f4f4f; 
+    border: 2px dashed #f96b00; 
     padding-right: 30px;
+    position: relative;
 }
 
+.pre-style{
+    white-space: pre-line;
+    padding-left: 5px !important;
+}
 
