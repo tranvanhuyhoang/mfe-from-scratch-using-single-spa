@@ -1,4 +1,6 @@
 #!/bin/bash
+git submodule init
+git submodule update
 yarn
 cd mfe-product-detail && yarn
 cd ../mfe-product-relate && yarn

@@ -13,30 +13,21 @@ Architecture:<br>
 How to using this repository:
 After clone this repository, you need to get some sub repository of micro app:
 
-```
-cd mfe-from-scratch-using-single-spa
-git submodule init
-git submodule update
-```
-
-After that:
+Because we use file start.sh to start project, so we must grant permission to this file:
 
 ```
-cd root-file
-yarn serve
+sudo chmod +x start.sh
 ```
 
-```
-cd mfe-product-relate
-yarn & yarn serve
-```
+Then enter your PC password
+
+Run
 
 ```
-cd mfe-product-detail
-yarn & yarn serve
+./start.sh
 ```
 
----
+to run the applications
 
 ### How I approach this project?
 
