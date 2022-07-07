@@ -11,9 +11,7 @@ Architecture:<br>
 | product-relate |              Vue2              |
 
 How to using this repository:
-After clone this repository, you need to get some sub repository of micro app:
-
-Because we use file start.sh to start project, so we must grant permission to this file:
+After clone this repository, you need to get some sub repository of micro app. At the first time you run the project, you can you the following commands. Because we use file start.sh to start project, so we must grant permission to this file:
 
 ```
 sudo chmod +x start.sh
@@ -27,7 +25,11 @@ Run
 ./start.sh
 ```
 
-to run the applications
+To run the applications, run the following command:
+
+```
+yarn serve
+```
 
 ### How I approach this project?
 
